@@ -13,6 +13,8 @@ then
 	echo "==============================="
 else
 
+rm index.html 2> /dev/null
+
 wget $1 2> /dev/null
 
 cat index.html |grep "href" | cut -d "/" -f 3 | grep "\." |cut -d '"' -f 1 | grep -v '<l' > list.txt;
